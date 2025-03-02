@@ -1,2 +1,2 @@
-# bolog
+# blog
 Blog with DRF
