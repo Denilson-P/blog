@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import User, Post, Category, Comment, Like
+from .models import User, Post, Image, Category, Comment, Like
 
 
 @admin.register(User)
@@ -11,6 +11,11 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "content", "publication_date", "author")
+
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ("post", "image", "description")
 
 
 @admin.register(Category)

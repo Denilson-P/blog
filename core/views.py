@@ -1,10 +1,11 @@
 from rest_framework import viewsets
 
-from .models import User, Post, Category, Comment, Like
+from .models import User, Post, Image, Category, Comment, Like
 
 from .serializers import (
     UserSerializer,
     PostSerializer,
+    ImageSerializer,
     CategorySerializer,
     CommentSerializer,
     LikeSerializer,
@@ -19,6 +20,11 @@ class UserViewSet(viewsets.ModelViewSet):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class ImageViewSet(viewsets.ModelViewSet):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
