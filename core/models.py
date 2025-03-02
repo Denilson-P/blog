@@ -17,15 +17,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
-    
+
+
 class Image(models.Model):
     post = models.ForeignKey(Post, related_name="images", on_delete=models.CASCADE)
     image = models.ImageField(upload_to="blog_images/")
     description = models.CharField(max_length=255, blank=True, null=True)
-    
+
     def __str__(self):
         return f"image for post: {self.post.title}"
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
